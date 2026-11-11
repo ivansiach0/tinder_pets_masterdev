@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=DM+Sans:wght@400..700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fff8ec;
+  --color-foreground: #291823;
+  --color-primary: #a52357;
+  --color-primary-foreground: #fff9f6;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+.landing {
+  display: grid;
+  min-height: 100svh;
+}
+
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem clamp(1.5rem, 6vw, 6.5rem) 2.5rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+}
+
+.brand-icon {
+  display: grid;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffc0d1;
+  color: #8d1c49;
+}
+
+.landing-copy {
+  margin-block: auto;
+  padding-top: clamp(2.5rem, 8vh, 5.5rem);
+}
+
+.landing-copy h1,
+.sign-in h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+}
+
+.landing-copy h1 {
+  font-size: clamp(3.25rem, 7.3vw, 8.5rem);
+}
+
+.landing-copy em {
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+.landing-copy p,
+.sign-in p {
+  max-width: 30ch;
+  margin-block: 1.4rem 1.6rem;
+  color: #614553;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.hero-photo {
+  position: relative;
+  min-height: 19rem;
+  background: #e9bcd2;
+}
+
+.hero-photo img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sign-in {
+  max-width: 36rem;
+  margin: auto;
+  padding: 3rem 1.5rem;
+}
+
+.sign-in h1 {
+  margin-top: 3rem;
+  font-size: clamp(3rem, 8vw, 6rem);
+}
+
+@media (min-width: 800px) {
+  .landing {
+    grid-template-columns: minmax(0, 0.94fr) minmax(0, 1fr);
+  }
+
+  .landing-content {
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
+  }
+
+  .landing-copy {
+    padding-top: 0;
+  }
+}
