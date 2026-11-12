@@ -1,5 +1,7 @@
-import { ArrowLeft, ArrowUpRight, PawPrint } from 'lucide-react'
+import { ArrowUpRight, PawPrint } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { AuthPage } from './AuthPage'
+import { Discover } from './Discover'
 
 function Landing() {
   return (
@@ -28,18 +30,15 @@ function Landing() {
   )
 }
 
-function SignIn() {
-  return (
-    <main className="sign-in">
-      <Button asChild variant="outline">
-        <a href="/"><ArrowLeft size={17} aria-hidden="true" /> Back to Pawprint</a>
-      </Button>
-      <h1>Log in</h1>
-      <p>Account sign-in will be available once authentication is connected.</p>
-    </main>
-  )
-}
-
 export function App() {
-  return window.location.pathname === '/sign-in' ? <SignIn /> : <Landing />
+  switch (window.location.pathname) {
+    case '/sign-in':
+      return <AuthPage signUp={false} />
+    case '/sign-up':
+      return <AuthPage signUp />
+    case '/discover':
+      return <Discover />
+    default:
+      return <Landing />
+  }
 }

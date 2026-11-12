@@ -10,16 +10,16 @@ Stop at each owner approval checkbox, including when resuming in a new chat. The
 - [x] Add root scripts for development, lint, typecheck, and build. Confirm both apps run locally and that Vite proxies an API request to Express.
 - [x] Build the minimal public landing page with a full-bleed pet image where practical, a short product description, and a primary login CTA that opens the sign-in screen. Authentication is connected in milestone 2.
 - [x] Run lint, typecheck, and build. Review the landing page at desktop and mobile widths and confirm the CTA is reachable by keyboard.
-- [ ] **Owner approval for milestone 1**
+- [x] **Owner approval for milestone 1**
 
 ## 2. Database, mock catalog, and authentication
 
-- [ ] Add Drizzle schema and versioned migrations for Better Auth, pets, and decisions. Include foreign keys and a unique constraint for user and pet.
-- [ ] Add `npm run db:migrate` and `npm run db:seed`. Apply migrations to a fresh disposable database and run the seed twice. Verify the catalog contains 67 unique pets.
-- [ ] Wire Better Auth to Express and React. Provide sign-up, sign-in, and sign-out with feedback for failed submissions. Add a protected Discover route and redirect signed-out visitors to sign-in.
-- [ ] Implement protected API endpoints to fetch undecided pets, record a decision, and list matches. Verify anonymous requests are rejected, invalid decisions are rejected, duplicate submissions create one row, and two accounts have isolated results.
-- [ ] Verify sign-up, sign-in, session persistence on reload, and sign-out in the browser. Apply the reviewed migration and seed to the designated Render database if its connection is configured. Report which database was verified.
-- [ ] **Owner approval for milestone 2**
+- [x] Add Drizzle schema and versioned migrations for Better Auth, pets, and decisions. Include foreign keys and a unique constraint for user and pet.
+- [x] Add `npm run db:migrate` and `npm run db:seed`. Apply migrations to a fresh disposable database and run the seed twice. Verify the catalog contains 67 unique pets.
+- [x] Wire Better Auth to Express and React. Provide sign-up, sign-in, and sign-out with feedback for failed submissions. Add a protected Discover route and redirect signed-out visitors to sign-in.
+- [x] Implement protected API endpoints to fetch undecided pets, record a decision, and list matches. Verify anonymous requests are rejected, invalid decisions are rejected, duplicate submissions create one row, and two accounts have isolated results.
+- [x] Verify sign-up, sign-in, session persistence on reload, and sign-out in the browser. Apply the reviewed migration and seed to the designated Render database if its connection is configured. Report which database was verified.
+- [x] **Owner approval for milestone 2**
 
 ## 3. Discover and Matches
 

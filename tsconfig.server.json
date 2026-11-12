@@ -5,7 +5,10 @@
     "strict": true,
     "skipLibCheck": true,
     "rootDir": "server",
-    "outDir": "dist/server"
+    "outDir": "dist/server",
+    "rewriteRelativeImportExtensions": true
   },
-  "include": ["server"]
+  "include": [
+    "server"
+  ]
 }
