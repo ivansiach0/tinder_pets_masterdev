@@ -2,6 +2,8 @@ import { ArrowUpRight, PawPrint } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { AuthPage } from './AuthPage'
 import { Discover } from './Discover'
+import { Matches } from './Matches'
+import { SignedIn } from './SignedIn'
 
 function Landing() {
   return (
@@ -37,7 +39,9 @@ export function App() {
     case '/sign-up':
       return <AuthPage signUp />
     case '/discover':
-      return <Discover />
+      return <SignedIn page="discover"><Discover /></SignedIn>
+    case '/matches':
+      return <SignedIn page="matches"><Matches /></SignedIn>
     default:
       return <Landing />
   }

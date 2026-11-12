@@ -2,7 +2,7 @@
 
 Work on the first milestone whose owner approval is unchecked. For each completed and verified item, change `[ ]` to `[x]`. Leave blocked or unverified items unchecked and report the reason. At the end of the milestone, share what changed, the checks you ran, and instructions for the owner's review. Include screenshots or a local URL for UI milestones when available.
 
-Stop at each owner approval checkbox, including when resuming in a new chat. The owner checks the box or explicitly approves that milestone in chat. If they approve in chat, record it before starting the next milestone. Apply requested corrections within the current milestone and return it for review.
+Stop at each owner approval checkbox, including when resuming in a new chat. The owner checks the box or explicitly approves that milestone in chat. After approval, record it in this file and commit the approved milestone changes and checklist updates together before starting the next milestone. Stage only changes that belong to the approved milestone. Apply requested corrections within the current milestone and return it for review.
 
 ## 1. Scaffold and public landing
 
@@ -23,11 +23,11 @@ Stop at each owner approval checkbox, including when resuming in a new chat. The
 
 ## 3. Discover and Matches
 
-- [ ] Build the responsive Discover deck with full-bleed photos, pet details, Pass and Adopt actions, and loading, error, and end-of-deck states.
-- [ ] Verify left and right decisions by mouse drag, arrow keys, touch swipe, and buttons. Verify short and canceled gestures snap back, and repeated input during a save advances only one card.
-- [ ] Build Matches and its empty and error states. Verify a right swipe appears in Matches after reload, a left swipe stays out of Matches, and both pets stay out of Discover for that account.
-- [ ] Verify save failure preserves the current card and allows retry. Review keyboard navigation, focus visibility, reduced motion, and mobile touch behavior on a device or in browser emulation. Report which environment was used.
-- [ ] **Owner approval for milestone 3**
+- [x] Build the responsive Discover deck with full-bleed photos, pet details, Pass and Adopt actions, and loading, error, and end-of-deck states.
+- [x] Verify left and right decisions by mouse drag, arrow keys, touch swipe, and buttons. Verify short and canceled gestures snap back, and repeated input during a save advances only one card.
+- [x] Build Matches and its empty and error states. Verify a right swipe appears in Matches after reload, a left swipe stays out of Matches, and both pets stay out of Discover for that account.
+- [x] Verify save failure preserves the current card and allows retry. Review keyboard navigation, focus visibility, reduced motion, and mobile touch behavior on a device or in browser emulation. Report which environment was used.
+- [x] **Owner approval for milestone 3**
 
 ## 4. Render deployment handoff
 
