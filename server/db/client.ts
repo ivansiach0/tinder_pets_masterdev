@@ -17,6 +17,8 @@ function isExternalRenderUrl(value: string) {
 export const pool = new Pool({
   connectionString,
   ssl: isExternalRenderUrl(connectionString) ? { rejectUnauthorized: true } : undefined,
-  connectionTimeoutMillis: 10_000,
+  connectionTimeoutMillis: 2_500,
 })
+pool.on('error', () => console.error('Pawprint lost an idle database connection.'))
+
 export const db = drizzle(pool, { schema })

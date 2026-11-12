@@ -31,12 +31,12 @@ Stop at each owner approval checkbox, including when resuming in a new chat. The
 
 ## 4. Render deployment handoff
 
-- [ ] Make `npm run build` build both apps and `npm start` serve the built app on `0.0.0.0` using Render's `PORT`. Verify direct navigation to a frontend route works and unknown API routes return API errors.
-- [ ] Add a health endpoint that returns success when the server and database are reachable. Verify it reports failure when the database is unavailable.
-- [ ] Document the Render settings in the README. Use `npm ci && npm run build` for Build, `npm run db:migrate` for Pre-Deploy on supported plans, and `npm start` for Start. Document a separately run migration for plans without Pre-Deploy and a one-time seed command. Keep schema changes and seeding out of build and startup.
-- [ ] Document the GitHub branch connection and automatic deploy settings, health-check path, database URL, Better Auth public URL and secret, and local setup from `.env.example`. Use the existing Render database in the deployment instructions. See [Render deploys](https://render.com/docs/deploys) and [Render health checks](https://render.com/docs/health-checks).
-- [ ] Rehearse a clean install, build, migration, seed, and production start against a disposable database. Smoke-test health, landing, login, swipe, and Matches. Share the exact Render settings with the owner. Leave GitHub push and live deployment for the owner's release.
-- [ ] **Owner approval for milestone 4**
+- [x] Make `npm run build` build both apps and `npm start` serve the built app on `0.0.0.0` using Render's `PORT`. Verify direct navigation to a frontend route works and unknown API routes return API errors.
+- [x] Add a health endpoint that returns success when the server and database are reachable. Verify it reports failure when the database is unavailable.
+- [x] Document the Render settings in the README. Use `npm ci && npm run build` for Build, `npm run db:migrate` for Pre-Deploy on supported plans, and `npm start` for Start. Document a separately run migration for plans without Pre-Deploy and a one-time seed command. Keep schema changes and seeding out of build and startup.
+- [x] Document the GitHub branch connection and automatic deploy settings, health-check path, database URL, Better Auth public URL and secret, and local setup from `.env.example`. Use the existing Render database in the deployment instructions. See [Render deploys](https://render.com/docs/deploys) and [Render health checks](https://render.com/docs/health-checks).
+- [x] Rehearse a clean install, build, migration, seed, and production start against a disposable database. Smoke-test health, landing, login, swipe, and Matches. Share the exact Render settings with the owner. Leave GitHub push and live deployment for the owner's release.
+- [x] **Owner approval for milestone 4**
 
 ## Mock catalog
 

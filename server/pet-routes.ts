@@ -1,13 +1,13 @@
 import { fromNodeHeaders } from 'better-auth/node'
 import { and, asc, desc, eq, notExists } from 'drizzle-orm'
-import { Router } from 'express'
+import { Router, type RequestHandler } from 'express'
 import { auth, authOrigin } from './auth.ts'
 import { db } from './db/client.ts'
 import { decisions, pets } from './db/schema.ts'
 
 export const petRoutes = Router()
 
-petRoutes.use(async (request, response, next) => {
+const requireSession: RequestHandler = async (request, response, next) => {
   response.set('Cache-Control', 'private, no-store')
   const session = await auth.api.getSession({ headers: fromNodeHeaders(request.headers) })
   if (!session) {
@@ -17,9 +17,9 @@ petRoutes.use(async (request, response, next) => {
 
   response.locals.userId = session.user.id
   next()
-})
+}
 
-petRoutes.get('/pets', async (_request, response) => {
+petRoutes.get('/pets', requireSession, async (_request, response) => {
   const userId: string = response.locals.userId
   const decided = db.select({ petId: decisions.petId }).from(decisions)
     .where(and(eq(decisions.userId, userId), eq(decisions.petId, pets.id)))
@@ -31,7 +31,7 @@ petRoutes.get('/pets', async (_request, response) => {
   response.json({ pets: availablePets })
 })
 
-petRoutes.post('/decisions', async (request, response) => {
+petRoutes.post('/decisions', requireSession, async (request, response) => {
   const origin = request.get('origin')
   if (origin && origin !== authOrigin) {
     response.status(403).json({ error: 'Request origin is not allowed.' })
@@ -72,7 +72,7 @@ petRoutes.post('/decisions', async (request, response) => {
   response.json({ decision: existing })
 })
 
-petRoutes.get('/matches', async (_request, response) => {
+petRoutes.get('/matches', requireSession, async (_request, response) => {
   const userId: string = response.locals.userId
   const matches = await db.select({ pet: pets, matchedAt: decisions.createdAt })
     .from(decisions)

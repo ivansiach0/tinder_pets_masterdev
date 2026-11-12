@@ -13,7 +13,8 @@
     "build": "npm run typecheck && vite build && tsc -p tsconfig.server.json",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "node server/db/migrate.ts",
-    "db:seed": "node server/db/seed.ts"
+    "db:seed": "node server/db/seed.ts",
+    "start": "NODE_ENV=production node dist/server/index.js"
   },
   "dependencies": {
     "@radix-ui/react-slot": "1.2.3",
